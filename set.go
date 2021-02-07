@@ -8,7 +8,7 @@ import (
 
 // Set type models sets.
 // The elements of a set are the keys of the underlying map.
-// Because a set is a map, its elements (the keys of the map) must be comparable types,
+// Since a set is a map, its elements (the keys of the map) must be comparable types,
 // that is boolean, numeric, string, pointer, channel or interface types,
 // or structs or arrays that contain only those types.
 type Set map[interface{}]struct{}
@@ -16,7 +16,7 @@ type Set map[interface{}]struct{}
 // Pair type models ordered pairs (for the cartesian product).
 type Pair [2]interface{}
 
-// New creates a new set containing elems and returns a pointer to it.
+// New creates a new set with the specified elements and returns a pointer to it.
 func New(elems ...interface{}) *Set {
 	a := make(Set)
 	for _, e := range elems {
@@ -118,7 +118,7 @@ func Inter(setA, setB *Set) *Set {
 	return &s
 }
 
-// Diff returns the set difference setA\setA.
+// Diff returns the set difference setA\setB.
 func Diff(setA, setB *Set) *Set {
 	s := make(Set)
 	for e := range *setA {

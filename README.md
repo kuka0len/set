@@ -46,7 +46,7 @@ type Set map[interface{}]struct{}
 ```
 
 Set type models sets. The elements of a set are the keys of the underlying map.
-Because a set is a map, its elements (the keys of the map) must be comparable
+Since a set is a map, its elements (the keys of the map) must be comparable
 types, that is boolean, numeric, string, pointer, channel or interface types, or
 structs or arrays that contain only those types.
 
@@ -56,7 +56,7 @@ structs or arrays that contain only those types.
 func Diff(setA, setB *Set) *Set
 ```
 
-Diff returns the set difference setA\setA.
+Diff returns the set difference setA\setB.
 
 #### func Inter
 
@@ -72,7 +72,7 @@ Inter returns the intersection of two sets.
 func New(elems ...interface{}) *Set
 ```
 
-New creates a new set containing elems and returns a pointer to it.
+New creates a new set with the specified elements and returns a pointer to it.
 
 #### func Prod
 
